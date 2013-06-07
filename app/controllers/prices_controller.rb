@@ -2,7 +2,12 @@ class PricesController < ApplicationController
   # GET /prices
   # GET /prices.json
   def index
-    @prices = Price.all
+
+    @prices = if params[:date]
+      Fund.find(params[:fund_id]).prices.where(:date => params[:date]).first
+    else
+      Fund.find(params[:fund_id]).prices
+    end
 
     respond_to do |format|
       format.html # index.html.erb
