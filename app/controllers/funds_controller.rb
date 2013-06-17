@@ -1,4 +1,5 @@
 class FundsController < ApplicationController
+  #skip_before_filter :verify_authenticity_token
   # GET /funds
   # GET /funds.json
   def index

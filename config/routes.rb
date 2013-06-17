@@ -1,6 +1,7 @@
 FrontEndTest::Application.routes.draw do
   resources :trades
   resources :prices
+  resources :investments
 
   resources :funds do
     resources :prices
