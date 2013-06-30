@@ -1,29 +1,36 @@
-<h1>Listing trades</h1>
+<div class='fund-name'>Sul America Expertise Fundo de Investimentos em Ações</div>
 
-<table>
-  <tr>
-    <th>Fund</th>
-    <th>Date</th>
-    <th>Shares</th>
-    <th>Kind</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<form class='trade-list'>
+  <table class='trade-list-table'>
+    <thead>
+      <tr class='trade-list-header'>
+        <th>DATA</th>
+        <th>TIPO</th>
+        <th>QUANTIDADE DE COTAS</th>
+        <th>VALOR POR COTA (R$)</th>
+        <th>VALOR TOTAL (R$)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class='trade'>
+        <td><input type='text' name='date' placeholder='Data' alt='Data'/></td>
+        <td>
+          <select>
+            <option>Aplicação</option>
+            <option>Resgate</option>
+          </select>
+        </td>
+        <td><input type='text' name='shares' placeholder='Quantidade de cotas' alt='Quantidade de cotas'/></td>
+        <td><input type='text' name='price' placeholder='Valor da Cota' alt='Valor da Cota'/></td>
+        <td><input type='text' name='value' placeholder='Valor Total' alt='Valor Total'/></td>
+      </tr>
+    </tbody>
+  </table>
+</form>
 
-<% @trades.each do |trade| %>
-  <tr>
-    <td><%= trade.fund %></td>
-    <td><%= trade.date %></td>
-    <td><%= trade.shares %></td>
-    <td><%= trade.kind %></td>
-    <td><%= link_to 'Show', trade %></td>
-    <td><%= link_to 'Edit', edit_trade_path(trade) %></td>
-    <td><%= link_to 'Destroy', trade, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+<%= link_to 'Inserir Nova Movimentação', '#' %>
 
-<br />
-
-<%= link_to 'New Trade', new_trade_path %>
+<section class='trades-footer'>
+  <%= link_to 'Salvar', '#' %>
+  <%= link_to 'Cancelar', '#' %>
+</section>

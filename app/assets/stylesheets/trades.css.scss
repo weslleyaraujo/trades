@@ -1,3 +1,13 @@
-// Place all the styles related to the trades controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.trade-list-table {
+  border: solid 1px black;
+  margin: 20px 0 0 0;
+}
+
+.trade-list-header th,
+.trade td {
+  border: solid 1px purple;
+}
+
+.trades-footer {
+  margin: 10px 0 0 0;
+}
