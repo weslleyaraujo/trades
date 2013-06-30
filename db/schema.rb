@@ -11,13 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130605231619) do
+ActiveRecord::Schema.define(:version => 20130617155230) do
 
   create_table "funds", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "investments", :force => true do |t|
+    t.integer  "fund_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "investments", ["fund_id"], :name => "index_investments_on_fund_id"
 
   create_table "prices", :force => true do |t|
     t.date    "date"
@@ -32,8 +40,9 @@ ActiveRecord::Schema.define(:version => 20130605231619) do
     t.date     "date"
     t.decimal  "shares"
     t.integer  "kind"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.integer  "investment_id"
   end
 
   add_index "trades", ["fund_id"], :name => "index_trades_on_fund_id"
