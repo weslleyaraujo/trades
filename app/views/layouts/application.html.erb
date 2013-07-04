@@ -1,14 +1,19 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>FrontEndTest</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html
+  lang="<%= I18n.locale %>"
+  dir="ltr"
+  data-controller="<%= controller.controller_name.camelize %>"
+  data-action="<%= controller.action_name.camelize %>"
+  >
+  <head>
+    <title>FrontEndTest</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-<%= yield %>
+  <%= yield %>
 
-</body>
+  </body>
 </html>

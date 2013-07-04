@@ -1,2 +1,18 @@
-// Place all the behaviors and hooks related to the matching controller here.
-// All this logic will automatically be available in application.js.
+Module("FrontEnd.TradesController.Index", function(Index) {
+  Index.fn.initialize = function(container) {
+    this.container = container;
+    this.button = $(container).find('.add-trade-button');
+
+    this.addEventListeners();
+  };
+
+  Index.fn.addEventListeners = function() {
+    this.button
+      .on('click', this.onButtonClick.bind(this))
+    ;
+  };
+
+  Index.fn.onButtonClick = function(event) {
+    alert(this.button.text());
+  };
+});
