@@ -1,33 +1,57 @@
+/* Using Backbone as an Event Aggregator */
+
 Module("FrontEnd.TradesController.Index", function(Index) {
   Index.fn.initialize = function(container) {
-    _.extend(this, Backbone.Events);
     this.container = container;
-    this.button = $(container).find('[data-js=add-trade-button]');
-    this.title = $(container).find('[data-js=trades-title]');
 
-    this.addPub();
-    this.addSub();
-  };
+    // Initialize Title
+    Module.run(
+        "FrontEnd.TradesController.Index.Title"
+      , this.container.find('[data-js=trades-title]')
+    );
 
-  Index.fn.addSub = function() {
-    this
-      .on('clickButton', this.onButtonClick, this)
-    ;
-  };
+    // Initialize Button
+    Module.run(
+        "FrontEnd.TradesController.Index.Button"
+      , this.container.find('[data-js=add-trade-button]')
+    );
 
-  Index.fn.addPub = function() {
-    this.button
-      .on('click', function() { this.trigger('clickButton') }.bind(this) )
-    ;
-  };
-
-  Index.fn.onButtonMouseOver = function(event) {
-    console.log('hova');
-    this.title.css('color', 'black');
-  };
-
-  Index.fn.onButtonClick = function(event) {
-    alert(this.button.text());
-    // this.title.css('color', 'red');
+    // this.mediator = new Mediator();
   };
 });
+
+Module("FrontEnd.TradesController.Index.Title", function(Title) {
+  Title.fn.initialize = function(container) {
+    this.container = container;
+
+    this.subs();
+  };
+
+  Title.fn.subs = function() {
+    Backbone.on('clickButton', this.onButtonClick, this);
+  };
+
+  Title.fn.onButtonClick = function(event) {
+    alert(this.container.text());
+  };
+});
+
+Module("FrontEnd.TradesController.Index.Button", function(Button) {
+  Button.fn.initialize = function(container) {
+    this.container = container;
+
+    this.pubs();
+  };
+
+  Button.fn.pubs = function() {
+    this.container.on('click', function() { Backbone.trigger('clickButton'); });
+  };
+});
+
+
+
+
+
+
+
+
