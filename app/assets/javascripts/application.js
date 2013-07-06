@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require module.min
+//= require underscore
+//= require_tree ../../../vendor/assets/javascripts/.
 //= require_tree .

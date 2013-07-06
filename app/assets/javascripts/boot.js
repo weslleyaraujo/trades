@@ -1,6 +1,6 @@
 Module("FrontEnd.Application", function(Application){
-  Application.fn.initialize = function(controller, action) {
-    Module.run(
+  Application.prototype.initialize = function(controller, action) {
+    app = Module.run(
         ["FrontEnd", controller + "Controller", action].join(".") // build the namespace
       , [document.body] // pass the body as the container
     );
