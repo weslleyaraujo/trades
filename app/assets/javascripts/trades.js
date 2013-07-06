@@ -31,8 +31,9 @@ Module("FrontEnd.TradesController.Index.Title", function(Title) {
     Backbone.on('clickButton', this.onButtonClick, this);
   };
 
-  Title.fn.onButtonClick = function(event) {
-    alert(this.container.text());
+  Title.fn.onButtonClick = function(display) {
+    // alert(this.container.text());
+    alert(display.name);
   };
 });
 
@@ -44,7 +45,7 @@ Module("FrontEnd.TradesController.Index.Button", function(Button) {
   };
 
   Button.fn.pubs = function() {
-    this.container.on('click', function() { Backbone.trigger('clickButton'); });
+    this.container.on('click', function() { Backbone.trigger('clickButton', { name: 'It works!' }); });
   };
 });
 
