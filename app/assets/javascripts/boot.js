@@ -13,5 +13,6 @@ $(function(){
     , action = html.data("action")
   ;
 
+  mediator = new Mediator();
   FrontEnd.Application(controller, action);
 });
