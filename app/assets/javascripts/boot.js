@@ -1,5 +1,5 @@
 Module("FrontEnd.Application", function(Application){
-  Application.prototype.initialize = function(controller, action) {
+  Application.fn.initialize = function(controller, action) {
     Module.run(
         ["FrontEnd", controller + "Controller", action].join(".") // build the namespace
       , $(document.body) // pass the body as the container
@@ -13,6 +13,5 @@ $(function(){
     , action = html.data("action")
   ;
 
-  mediator = new Mediator();
   FrontEnd.Application(controller, action);
 });

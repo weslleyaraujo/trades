@@ -1,9 +1,11 @@
-/* Using Backbone as an Event Aggregator */
+/* Using Mediator.js */
 
 // Page
 Module("FrontEnd.TradesController.Index", function(Index) {
   Index.fn.initialize = function(container) {
     this.container = container;
+
+    Module('FrontEnd.AppMediator', new Mediator());
 
     // Initialize Title
     Module.run(
@@ -28,11 +30,13 @@ Module("FrontEnd.TradesController.Index.Title", function(Title) {
   };
 
   Title.fn.subs = function() {
-    mediator.subscribe('clickButton', $.proxy(this.onButtonClick, this));
+    FrontEnd.AppMediator.subscribe('clickButton', $.proxy(this.onButtonClick, this));
   };
 
   Title.fn.onButtonClick = function(display) {
-    alert(display.name);
+    var text = (display.hasOwnProperty('name')) ? display.name : '';
+    console.log(text);
+    return 'done';
   };
 });
 
@@ -45,7 +49,9 @@ Module("FrontEnd.TradesController.Index.Button", function(Button) {
   };
 
   Button.fn.pubs = function() {
-    this.container.on('click', function() { mediator.publish('clickButton', { name: 'It works!' }); });
+    this.container.on('click', function() {
+      FrontEnd.AppMediator.publish('clickButton', { name: 'It works!' });
+    });
   };
 });
 
