@@ -15,7 +15,7 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer', :platforms => :ruby
+  gem 'therubyracer', '>= 0.12.1'
 
   gem 'uglifier', '>= 1.0.3'
 end
