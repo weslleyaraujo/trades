@@ -1,0 +1,45 @@
+// ---------------------
+// magnetis-fund
+// ------------------
+
+@import 'compass/css3'
+@import '../../base/skins'
+
+$module-name: 'magnetis-fund'
+
+.#{$module-name}
+  p
+    margin: 0
+  li
+    position: relative
+    padding-right: 60px
+    &:last-child
+      padding-right: 0
+    i
+      position: absolute
+      right: 26px
+      &.icons-sprite-divisor
+        top: 3px
+      &.icons-sprite-x
+        top: 17px
+        right: 21px
+      &.icons-sprite-equal
+        top: 24px
+        right: 16px
+  .#{$module-name}-value
+    font-size: 24px
+    color: $secondary-color
+    font-family: $main-headers-font-family
+  .#{$module-name}-description
+    position: relative
+    padding-bottom: 20px
+    margin-bottom: 20px
+    &:after
+      background-color: #EEEEEE
+      bottom: 0
+      content: ""
+      height: 3px
+      left: 0
+      position: absolute
+      width: 100%
+      +box-shadow(inset 1px 1px 0px #CFCFCF)

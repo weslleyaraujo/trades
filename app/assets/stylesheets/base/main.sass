@@ -1,0 +1,49 @@
+// ---------------------
+// Main file (non-modular)
+// ---------------------
+@import 'compass'
+
+$prefix-name: 'magnetis'
+
+// Structure
+.row
+  width: 100%
+  +clearfix
+  @extend .pull-left
+
+.wrap
+  width: 960px
+  margin: 0 auto
+  +clearfix
+
+// Titles
+.#{$prefix-name}-title
+  margin: 30px 0
+  font-size: 24px
+
+// Text Helpers
+.text-center
+  text-align: center
+
+.text-left
+  text-align: left
+
+.text-right
+  text-align: right
+
+// Floats
+.pull-left
+  float: left
+
+.pull-right
+  float: right
+
+// Inline-block
+.inline-block
+  +inline-block
+
+// Clear list
+.clear-list
+  margin: 0
+  padding: 0
+  list-style-type: none

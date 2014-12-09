@@ -1,29 +1,45 @@
-<h1>Listing trades</h1>
+<div class="row">
+  <div class="wrap">
 
-<table>
-  <tr>
-    <th>Fund</th>
-    <th>Date</th>
-    <th>Shares</th>
-    <th>Kind</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+    <div class="magnetis-fund">
+      <h2 class="magnetis-title">Sul America Expertise  fundo de investimento em ações</h2>
+      <ul class="clear-list row magnetis-fund-description">
+        <li class="inline-block">
+          <p class="magnetis-fund-title">DATA</p>
+          <p class="magnetis-fund-value">31/10/2013</p>
+          <i class="icons-sprite-divisor"></i>
+        </li>
 
-<% @trades.each do |trade| %>
-  <tr>
-    <td><%= trade.fund %></td>
-    <td><%= trade.date %></td>
-    <td><%= trade.shares %></td>
-    <td><%= trade.kind %></td>
-    <td><%= link_to 'Show', trade %></td>
-    <td><%= link_to 'Edit', edit_trade_path(trade) %></td>
-    <td><%= link_to 'Destroy', trade, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+        <li class="inline-block">
+          <p class="magnetis-fund-title">SALDO DE COTAS</p>
+          <p class="magnetis-fund-value">10.035.700,0000000000</p>
+          <i class="icons-sprite-x"></i>
+        </li>
 
-<br />
+        <li class="inline-block">
+          <p class="magnetis-fund-title">VALOR POR COTA (R$)</p>
+          <p class="magnetis-fund-value">10.035.700.200,00</p>
+          <i class="icons-sprite-equal"></i>
+        </li>
 
-<%= link_to 'New Trade', new_trade_path %>
+        <li class="inline-block">
+          <p class="magnetis-fund-title">VALOR TOTAL (R$)</p>
+          <p class="magnetis-fund-value">100.000.035.700.200,00</p>
+        </li>
+      </ul>
+      <div class="magnetis-trades">
+        <h3>Movimentações</h3>
+        <table>
+          <tr>
+            <td>DATA</td>
+            <td>TIPO</td>
+            <td>QUANTIDADE DE COTAS</td>
+            <td>VALOR POR COTA (R$)</td>
+            <td>VALOR TOTAL (R$)</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>
