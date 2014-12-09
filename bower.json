@@ -1,0 +1,21 @@
+{
+  "name": "trades",
+  "version": "1.0.0",
+  "homepage": "https://github.com/magnetis/trades",
+  "authors": [
+    "Weslley Araujo <weslleyaraujo20@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/assets/vendor",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "~2.1.1",
+    "underscore": "~1.7.0"
+  }
+}
