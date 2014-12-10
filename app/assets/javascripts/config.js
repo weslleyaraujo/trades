@@ -5,6 +5,11 @@
  * all config values must be here
  * */
 
+// setting underscore delimiters
+_.templateSettings = {
+  interpolate: /\{\{(.+?)\}\}/g
+};
+
 window.Magnetis = {};
 
 Magnetis.Backbone = {
