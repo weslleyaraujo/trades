@@ -29,14 +29,54 @@
       </ul>
       <div class="magnetis-trades">
         <h3>Movimentações</h3>
-        <table>
-          <tr>
-            <td>DATA</td>
-            <td>TIPO</td>
-            <td>QUANTIDADE DE COTAS</td>
-            <td>VALOR POR COTA (R$)</td>
-            <td>VALOR TOTAL (R$)</td>
-          </tr>
+        <table class="row">
+          <thead>
+            <tr>
+              <td></td>
+              <td>DATA</td>
+              <td>TIPO</td>
+              <td>QUANTIDADE DE COTAS</td>
+              <td>VALOR POR COTA (R$)</td>
+              <td>VALOR TOTAL (R$)</td>
+              <td></td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-center">
+                <i class="icons-sprite-arrow-blue"></i>
+              </td>
+              <td>
+                <input type="text">
+              </td>
+              <td>
+                <div class="magnetis-select">
+                  <select name="">
+                    <option value="a">Aplicação</option>
+                    <option value="a">Resgate</option>
+                    <option value="a">Resgate para IR</option>
+                  </select>
+                </div>
+              </td>
+              <td>
+                <input type="text"
+                  class="is-right">
+              </td>
+              <td>
+                <input type="text"
+                  class="is-right"
+                  disabled="disabled"
+                  value="123.456.777">
+              </td>
+              <td>
+                <input type="text"
+                  class="is-right">
+              </td>
+              <td class="text-center">
+                <i class="icons-sprite-arrow-blue"></i>
+              </td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>
