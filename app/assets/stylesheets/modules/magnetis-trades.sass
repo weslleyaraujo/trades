@@ -11,9 +11,33 @@ $module-name: 'magnetis-trades'
   h3
     font-size: 18px
   table
+    position: relative
+    &:after
+      background-color: #EEEEEE
+      bottom: 0
+      content: ""
+      height: 3px
+      left: 0
+      position: absolute
+      width: 100%
+      +box-shadow(inset 1px 1px 0px #CFCFCF)
     tr
       border-top: 1px solid #E1E1E1
       td
         padding: 10px
+        +transition(0.3s)
         &:first-child, &:last-child
           padding: 10px 3px 10px 12px
+        &.is-active
+          background-color: $secondary-background-color
+
+.#{$module-name}-button
+  padding: 0 !important
+  a
+    text-decoration: none
+    display: block
+    padding: 30px 0
+    color: $secondary-color
+    +transition(0.3s)
+    &:hover
+      background-color: $secondary-background-color

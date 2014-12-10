@@ -1,0 +1,54 @@
+@import 'compass'
+
+.trash-sprite
+  background-image: image-url('trash.png')
+  background-repeat: no-repeat
+  +inline-block
+
+.trash-sprite-closed-soft-gray
+  background-position: 0 0
+  width: 11px
+  height: 14px
+  @extend .trash-sprite
+
+.trash-sprite-closed-gray 
+  background-position: -13px 0
+  width: 11px
+  height: 14px
+  @extend .trash-sprite
+
+.trash-sprite-closed-red 
+  background-position: -26px 0
+  width: 11px
+  height: 14px
+  @extend .trash-sprite
+
+.trash-sprite-closed-yellow
+  background-position: -39px 0
+  width: 11px
+  height: 14px
+  @extend .trash-sprite
+
+.trash-sprite-open-soft-gray
+  background-position: 0 -16px
+  width: 11px
+  height: 15px
+  @extend .trash-sprite
+
+.trash-sprite-open-gray
+  background-position: -12px -16px
+  width: 12px
+  height: 15px
+  @extend .trash-sprite
+
+.trash-sprite-open-red
+  background-position: -25px -16px
+  width: 12px
+  height: 15px
+  @extend .trash-sprite
+
+.trash-sprite-open-yellow
+  background-position: -38px -16px
+  width: 12px
+  height: 15px
+  @extend .trash-sprite

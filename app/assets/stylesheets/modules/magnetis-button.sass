@@ -1,0 +1,47 @@
+// ---------------------
+// magnetis-button
+//
+// Notes: Same as twitter bootstrap button
+// ------------------
+
+@import 'compass/css3'
+@import '../../base/skins'
+
+$module-name: 'magnetis-button'
+$module-font-size: 16px
+$module-padding: 15px 20px
+$module-color: #666
+$module-background-color: #FFF
+
+.#{$module-name}
+  /* Structure */
+  line-height: normal
+  white-space: nowrap
+  vertical-align: baseline
+  text-align: center
+  cursor: pointer
+  font-family: inherit
+  font-size: $module-font-size
+  *font-size: 90% /*IE 6/7 - To reduce IE's oversized button text*/
+  *overflow: visible /*IE 6/7 - Because of IE's overly large left/right padding on buttons */
+  padding: $module-padding
+  color: $module-color
+  border: 1px solid $module-background-color
+  background-color: $module-background-color
+  text-decoration: none
+  +border-radius(3px)
+  +inline-block
+  +experimental(user-drag, none)
+  +experimental(user-select, none)
+  +transition(ease-in-out background-color .3s)
+  &:focus
+    outline: 0
+
+  // Themes
+  &.confirm
+    border-color: #6d8c29
+    color: #FFF
+    +text-shadow(1px -1px 1px #6d8c29)
+    +background-image(linear-gradient(#B3D450, #8CBA39))
+    &:active
+      +box-shadow(0 0 0 1px rgba(0,0,0, 0.15) inset, 0 0 6px rgba(0,0,0, 0.20) inset)
