@@ -4,15 +4,16 @@
  * This file will be the first import after vendor,
  * all config values must be here
  * */
-window.Trades = {};
 
-Trades.Backbone = {
+window.Magnetis = {};
+
+Magnetis.Backbone = {
   models: {},
   views: {},
   collections: {}
 };
 
-Trades.helpers = {};
+Magnetis.helpers = {};
 
 /*
  * Helper for underscore template
@@ -20,7 +21,7 @@ Trades.helpers = {};
  * @method template
  * @return {Function} Returns the template function
  * */
-Trades.helpers.template = function (selector) {
+Magnetis.helpers.template = function (selector) {
   var content = $(selector).html();
   return _.template(content ? content : "");
 };

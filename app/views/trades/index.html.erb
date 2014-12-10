@@ -98,3 +98,14 @@
 
   </div>
 </div>
+
+<% content_for :javascript_ready do %>
+  <script>
+    $(function () {
+      new Magnetis.TradesManager({
+        fundsUrl: '/funds.json',
+        tradesUrl: '/trades.json'
+      });
+    });
+  </script>
+<% end %>
