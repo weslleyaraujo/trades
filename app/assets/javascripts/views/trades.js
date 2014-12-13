@@ -7,6 +7,10 @@
   'use strict';
   
   root.Trades = Backbone.View.extend({
+    events: {
+      'click .magnetis-trades-button a': 'onAddClick'
+    },
+
     initialize: function (options) {
       this.trades = options.trades;
       this.render();
@@ -26,12 +30,15 @@
 
     addTrade: function (model) {
       model = model || new Backbone.Model();
-
       var trade = new Magnetis.Backbone.views.Trade({
         model: model
       });
 
       this.$el.find('tbody').append(trade.el);
+    },
+
+    onAddClick: function () {
+      this.addTrade();
     }
   });
 

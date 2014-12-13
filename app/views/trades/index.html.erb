@@ -61,7 +61,7 @@
     </tbody>
   </table>
   <div class="magnetis-trades-button row text-center">
-    <a href=javascript:void(0);">
+    <a href="javascript: void(0);">
       INSERIR NOVA MOVIMENTAÇÃO
     </a>
   </div>
@@ -70,18 +70,18 @@
 <script type="text/template"
   id="trade-template">
 
-    <td class="text-center">
-      <i class="icons-sprite-arrow-blue"></i>
+    <td class="text-center magnetis-trades-reference-icon">
+      <i class="icons-sprite-arrow-green"></i>
     </td>
     <td>
       <input type="text">
     </td>
     <td>
       <div class="magnetis-select">
-        <select name="">
-          <option value="0">Aplicação</option>
-          <option value="1">Resgate</option>
-          <option value="2">Resgate para IR</option>
+        <select name="kind">
+          <option value="0" data-reference-icon="icons-sprite-arrow-green">Aplicação</option>
+          <option value="1" data-reference-icon="icons-sprite-arrow-blue">Resgate</option>
+          <option value="2" data-reference-icon="icons-sprite-arrow-ir">Resgate para IR</option>
         </select>
       </div>
     </td>
@@ -101,7 +101,7 @@
         class="is-right">
     </td>
     <td class="text-center">
-      <a href="javascript:void(0);" class="trash-sprite-closed-gray"></a>
+      <a href="javascript:void(0)" class="icons-sprite-close"></a>
     </td>
 
 </script>
