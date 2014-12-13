@@ -14,8 +14,8 @@
       updated_at: '',
 
       // front end data
-      price: '',
-      has_prices: false
+      has_prices: false,
+      prices: ''
     }
   });
 

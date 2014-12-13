@@ -1,11 +1,14 @@
 //= require jquery/dist/jquery
+//= require jquery-ui/jquery-ui
 //= require underscore/underscore
+//= require backbone/backbone
 //= require backbone/backbone
 
 //= require config
 //
 //= require models/fund
 //= require models/trade
+//= require models/price
 //
 //= require collections/funds
 //= require collections/trades

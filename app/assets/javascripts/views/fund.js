@@ -16,7 +16,8 @@
 
     renderTrades: function () {
       var trades = new Magnetis.Backbone.views.Trades({
-        trades: this.trades
+        trades: this.trades,
+        prices: this.model.get('prices')
       });
 
       this.$el.find('.magnetis-trades').html(trades.el);

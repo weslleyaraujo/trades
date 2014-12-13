@@ -13,6 +13,7 @@
 
     initialize: function (options) {
       this.trades = options.trades;
+      this.prices = options.prices;
       this.render();
     },
 
@@ -31,7 +32,8 @@
     addTrade: function (model) {
       model = model || new Magnetis.Backbone.models.Trade();
       var trade = new Magnetis.Backbone.views.Trade({
-        model: model
+        model: model,
+        prices: this.prices
       });
 
       this.$el.find('tbody').append(trade.el);

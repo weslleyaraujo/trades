@@ -16,13 +16,15 @@
     tagName: 'tr',
 
     events: {
-      'change [name="kind"]': 'onKindChange',
-      'change [name="date"]': 'onDateChange',
+      'change [name="kind"]': 'onKindChange'
     },
 
     initialize: function (options) {
+      this.prices = options.prices;
       this.render();
       this.changeIcon(this.getIcon(this.$el.find('[name="kind"]').val()));
+
+      this.bindUI();
     },
 
     render: function () {
@@ -48,9 +50,11 @@
           .addClass(className);
     },
 
-    onDateChange: function () {
-                    debugger
-      console.log(this.model.toJSON());
+    bindUI: function () {
+      this.$el.find('[name="date"]').datepicker({
+        minDate: this.prices.firstDate(),
+        maxDate: this.prices.lastDate()
+      });
     }
 
   });
