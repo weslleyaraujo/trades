@@ -71,22 +71,26 @@
   id="trade-template">
 
     <td class="text-center magnetis-trades-reference-icon">
-      <i class="icons-sprite-arrow-green"></i>
+      <i class=""></i>
     </td>
     <td>
-      <input type="text">
+      <input type="text"
+        value="{{ date }}"
+        name="date" />
     </td>
     <td>
       <div class="magnetis-select">
         <select name="kind">
-          <option value="0" data-reference-icon="icons-sprite-arrow-green">Aplicação</option>
-          <option value="1" data-reference-icon="icons-sprite-arrow-blue">Resgate</option>
-          <option value="2" data-reference-icon="icons-sprite-arrow-ir">Resgate para IR</option>
+          <option value="0" {{ kind === 0 ? "selected='selected'" : "" }} >Aplicação</option>
+          <option value="1" {{ kind === 1 ? "selected='selected'" : "" }} >Resgate</option>
+          <option value="2" {{ kind === 2 ? "selected='selected'" : "" }} >Resgate para IR</option>
         </select>
       </div>
     </td>
     <td>
       <input type="text"
+        name="shares"
+        value="{{ shares }}"
         class="is-right">
     </td>
     <td>
@@ -115,7 +119,8 @@
         fundsEl: '#funds',
         fundTemplate: '#fund-template',
         tradesTemplate: '#trades-template',
-        tradeTemplate: '#trade-template'
+        tradeTemplate: '#trade-template',
+        pricesUrl: 'funds/:id/prices.json'
       });
     });
   </script>

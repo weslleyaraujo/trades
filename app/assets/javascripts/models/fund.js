@@ -11,7 +11,11 @@
       created_at: '',
       id: '',
       name: '',
-      updated_at: ''
+      updated_at: '',
+
+      // front end data
+      price: '',
+      has_prices: false
     }
   });
 

@@ -6,7 +6,8 @@
     tradesUrl: '',
     fundsEl: '',
     fundTemplate: '',
-    tradesTemplate: ''
+    tradesTemplate: '',
+    pricesUrl: ''
   };
 
   function TradesManager (options) {
@@ -27,6 +28,7 @@
     });
 
     this.fundsCollection = new app.collections.Funds({
+      pricesUrl: this.options.pricesUrl,
       url: this.options.fundsUrl,
       model: app.models.Fund,
     });

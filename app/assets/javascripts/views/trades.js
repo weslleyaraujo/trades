@@ -29,7 +29,7 @@
     },
 
     addTrade: function (model) {
-      model = model || new Backbone.Model();
+      model = model || new Magnetis.Backbone.models.Trade();
       var trade = new Magnetis.Backbone.views.Trade({
         model: model
       });
