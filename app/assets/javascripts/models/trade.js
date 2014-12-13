@@ -15,7 +15,18 @@
       investment_id: '',
       kind: '',
       shares: '',
-      updated_at: ''
+      updated_at: '',
+
+      // front end date
+      formated_date: ''
+    },
+
+    initialize: function () {
+      this.prepare();
+    },
+
+    prepare: function () {
+      this.set('formated_date', Magnetis.helpers.toBrDate(this.get('date')));
     }
   });
 

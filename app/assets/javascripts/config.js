@@ -30,3 +30,13 @@ Magnetis.helpers.template = function (selector) {
   var content = $(selector).html();
   return _.template(content ? content : "");
 };
+
+/*
+ * Helper for format date to 00/00/000
+ *
+ * @method toBrDate
+ * @return {String} The formated date
+ * */
+Magnetis.helpers.toBrDate = function (date) {
+  return date.split('-').reverse().join('/');
+};

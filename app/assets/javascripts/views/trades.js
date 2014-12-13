@@ -22,7 +22,7 @@
       this.renderTrades();
 
       // add empty trade
-     this.addTrade();
+      this.addTrade();
     },
 
     renderTrades: function () {
@@ -42,6 +42,7 @@
     onAddClick: function () {
       this.addTrade();
     }
+
   });
 
 } (Magnetis.Backbone.views));

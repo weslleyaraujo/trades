@@ -4,6 +4,7 @@
 //= require backbone/backbone
 //= require backbone/backbone
 
+//= require jquery-ui-pt-br
 //= require config
 //
 //= require models/fund
