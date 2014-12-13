@@ -79,15 +79,13 @@
               </td>
             </tr>
 
-            <tr>
-              <td colspan="7" class="text-center magnetis-trades-button">
-                <a href=javascript:void(0);">
-                  INSERIR NOVA MOVIMENTAÇÃO
-                </a>
-              </td>
-            </tr>
           </tbody>
         </table>
+        <div class="magnetis-trades-button row text-center">
+          <a href=javascript:void(0);">
+            INSERIR NOVA MOVIMENTAÇÃO
+          </a>
+        </div>
       </div>
 
       <div class="magnetis-fund-bottom row">
@@ -103,6 +101,7 @@
 <script type="text/template"
   id="fund-template">
   <h2 class="magnetis-title">{{ name }}</h2>
+
   <ul class="clear-list row magnetis-fund-description">
     <li class="inline-block">
       <p class="magnetis-fund-title">DATA</p>
@@ -138,6 +137,31 @@
   </div>
 </script>
 
+<script type="text/template"
+  id="trades-template">
+  <h3>Movimentações</h3>
+  <table class="row">
+    <thead>
+      <tr>
+        <td></td>
+        <td>DATA</td>
+        <td>TIPO</td>
+        <td>QUANTIDADE DE COTAS</td>
+        <td>VALOR POR COTA (R$)</td>
+        <td>VALOR TOTAL (R$)</td>
+        <td></td>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+  <div class="magnetis-trades-button row text-center">
+    <a href=javascript:void(0);">
+      INSERIR NOVA MOVIMENTAÇÃO
+    </a>
+  </div>
+</script>
+
 <% content_for :javascript_ready do %>
   <script>
     $(function () {
@@ -145,7 +169,8 @@
         fundsUrl: '/funds.json',
         tradesUrl: '/trades.json',
         fundsEl: '#funds',
-        fundTemplate: '#fund-template'
+        fundTemplate: '#fund-template',
+        tradesTemplate: '#trades-template'
       });
     });
   </script>

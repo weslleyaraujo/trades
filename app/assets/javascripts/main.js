@@ -5,7 +5,8 @@
     fundsUrl: '',
     tradesUrl: '',
     fundsEl: '',
-    fundTemplate: ''
+    fundTemplate: '',
+    tradesTemplate: ''
   };
 
   function TradesManager (options) {
@@ -13,9 +14,13 @@
     this.prepare();
     this.bind();
     this.start();
-  };
+  }
 
   TradesManager.prototype.prepare = function () {
+    // set the template for each view
+    this.setTemplates();
+
+    // instance collections and views
     this.tradesCollection = new app.collections.Trades({
       url: this.options.tradesUrl,
       model: app.models.Trade
@@ -29,10 +34,13 @@
     this.fundsView = new app.views.Funds({
       collection: this.fundsCollection,
       el: this.options.fundsEl,
-      trades: this.tradesCollection,
-      itemTemplate: helpers.template(this.options.fundTemplate),
-      item: app.views.Fund
+      trades: this.tradesCollection
     });
+  };
+
+  TradesManager.prototype.setTemplates = function () {
+    app.views.Fund.prototype.template = helpers.template(this.options.fundTemplate);
+    app.views.Trades.prototype.template = helpers.template(this.options.tradesTemplate);
   };
 
   TradesManager.prototype.bind = function () {

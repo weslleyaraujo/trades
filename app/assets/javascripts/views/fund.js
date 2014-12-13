@@ -3,22 +3,30 @@
  *
  * View for each fund
  * */
-;(function (root, template) {
+;(function (root) {
   'use strict';
   
   root.Fund = Backbone.View.extend({
     className: 'magnetis-fund',
 
     initialize: function (options) {
-      this.template = options.template;
+      this.trades = options.trades;
       this.render();
     },
 
+    renderTrades: function () {
+      var trades = new Magnetis.Backbone.views.Trades({
+        trades: this.trades
+      });
+
+      this.$el.find('.magnetis-trades').html(trades.el);
+    },
+
     render: function () {
-              console.log(this.model.toJSON());
       this.$el.html(this.template(this.model.toJSON()));
+      this.renderTrades();
     }
 
-  })
+  });
 
-} (Magnetis.Backbone.views, Magnetis.helpers.template));
+} (Magnetis.Backbone.views));

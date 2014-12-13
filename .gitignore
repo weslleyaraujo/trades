@@ -60,3 +60,5 @@ node_modules
 
 # bower deps
 app/assets/vendor/
+
+.DS_Store

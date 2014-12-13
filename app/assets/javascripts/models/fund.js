@@ -13,6 +13,6 @@
       name: '',
       updated_at: ''
     }
-  })
+  });
 
 } (Magnetis.Backbone.models));

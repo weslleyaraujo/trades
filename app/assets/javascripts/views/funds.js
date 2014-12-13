@@ -10,8 +10,6 @@
     initialize: function (options) {
       this.el = options.el;
       this.trades = options.trades;
-      this.itemTemplate = options.itemTemplate;
-      this.item = options.item;
       this.bind();
     },
 
@@ -29,13 +27,20 @@
     },
 
     addOne: function (model) {
-      var item = new this.item({
+      var item = new Magnetis.Backbone.views.Fund({
         model: model,
-        template: this.itemTemplate
+        trades: this.getTrades(model.id)
       });
 
       this.$el.append(item.el);
+    },
+
+    getTrades: function (id) {
+     return this.trades.where({
+       fund_id: id
+     });
     }
-  })
+
+  });
 
 } (Magnetis.Backbone.views));

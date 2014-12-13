@@ -17,6 +17,6 @@
       shares: '',
       updated_at: ''
     }
-  })
+  });
 
 } (Magnetis.Backbone.models));

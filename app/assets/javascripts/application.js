@@ -10,6 +10,8 @@
 //= require collections/funds
 //= require collections/trades
 //
+//= require views/trades
+//
 //= require views/fund
 //= require views/funds
 //
