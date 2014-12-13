@@ -1,9 +1,9 @@
 /*
- * @class Funds
+ * @class Trades
  *
- * View for each fund
+ * View for all trades
  * */
-;(function (root, template) {
+;(function (root) {
   'use strict';
   
   root.Trades = Backbone.View.extend({
@@ -15,6 +15,9 @@
     render: function () {
       this.$el.html(this.template());
       this.renderTrades();
+
+      // add empty trade
+     this.addTrade();
     },
 
     renderTrades: function () {
@@ -22,8 +25,14 @@
     },
 
     addTrade: function (model) {
-              
+      model = model || new Backbone.Model();
+
+      var trade = new Magnetis.Backbone.views.Trade({
+        model: model
+      });
+
+      this.$el.find('tbody').append(trade.el);
     }
   });
 
-} (Magnetis.Backbone.views, Magnetis.helpers.template));
+} (Magnetis.Backbone.views));

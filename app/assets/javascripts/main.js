@@ -41,6 +41,7 @@
   TradesManager.prototype.setTemplates = function () {
     app.views.Fund.prototype.template = helpers.template(this.options.fundTemplate);
     app.views.Trades.prototype.template = helpers.template(this.options.tradesTemplate);
+    app.views.Trade.prototype.template = helpers.template(this.options.tradeTemplate);
   };
 
   TradesManager.prototype.bind = function () {

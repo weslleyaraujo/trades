@@ -11,6 +11,7 @@
 //= require collections/trades
 //
 //= require views/trades
+//= require views/trade
 //
 //= require views/fund
 //= require views/funds
