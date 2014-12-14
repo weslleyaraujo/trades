@@ -13,7 +13,7 @@
       fund_id: '',
       id: '',
       investment_id: '',
-      kind: '',
+      kind: '0',
       shares: '',
       updated_at: '',
 
@@ -22,10 +22,15 @@
     },
 
     initialize: function () {
-      this.prepare();
+      this.bind();
+      this.formatDate();
     },
 
-    prepare: function () {
+    bind: function () {
+      this.on('change:date', this.formatDate, this);
+    },
+
+    formatDate: function () {
       this.set('formated_date', Magnetis.helpers.toBrDate(this.get('date')));
     },
 
@@ -35,6 +40,18 @@
       }
 
       return '/trades.json'
+    },
+
+    validate: function (attributes) {
+
+      if (!attributes.date.match(/([0-9]{4})-([0-9]{2})-([0-9]{2})/g)) {
+        return 'Enter a valid date';
+      }
+
+      if (!_.isEmpty(attributes.shared)) {
+        return 'Enter number of shares';
+      }
+
     }
   });
 

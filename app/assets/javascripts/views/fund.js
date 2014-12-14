@@ -10,7 +10,7 @@
     className: 'magnetis-fund',
 
     events: {
-      'click #save': 'onClickSave'
+      'click .confirm': 'onClickSave'
     },
 
     initialize: function (options) {
@@ -33,16 +33,16 @@
       this.renderTrades();
     },
 
-    onClickSave: function (event) {
+    onClickSave: function () {
       var options = {
         silent: true
       };
 
-      event.preventDefault();
-
       _(this.getTrades()).each(function (model) {
-        options.type = (!_.isNumber(model.id)) ? 'POST' : 'PUT';
-        model.save(null, options);
+          options.type = (!_.isNumber(model.id)) ? 'POST' : 'PUT';
+          if (model.isValid()) {
+            model.save(null, options);
+          }
       });
     },
 

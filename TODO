@@ -1,4 +1,5 @@
-- Save new Trades into database
 - Fix bug of large number of shares
 - Add calendar icon to date input
 - Align text to the right in some inputs
+- Validate model before save
+- Delete trades (view & db)

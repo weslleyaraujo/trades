@@ -19,6 +19,7 @@
       'change [name="kind"]': 'onKindChange',
       'keyup [name="shares"]': 'calculate',
       'change [name="date"]': 'onChangeDate',
+      'click .remove': 'onRemoveClick',
     },
 
     initialize: function (options) {
@@ -116,13 +117,21 @@
     },
 
     setTotal: function (total) {
-      this.model.set('total', this.$el.find('[name="total"]').autoNumeric('set', total).val());
+      this.$el.find('[name="total"]').autoNumeric('set', total).val();
     },
 
-    onChangeDate: function () {
-      var price = this.getPriceByDay(this.getActualDay());
-      this.setPrice(price);
+    onChangeDate: function (event) {
+      event.preventDefault();
       this.calculate();
+    },
+
+    onRemoveClick: function () {
+      this.$el.remove();
+      
+      // if it is already persisted
+      if (_.isNumber(this.model.id)) {
+        this.model.destroy();
+      }
     }
 
   });
