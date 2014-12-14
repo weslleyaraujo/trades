@@ -37,6 +37,7 @@
     onKindChange: function (event) {
       var $target = $(event.target);
       this.changeIcon(this.getIcon($target.val()));
+      this.model.set('kind', $target.val());
     },
 
     getIcon: function (reference) {

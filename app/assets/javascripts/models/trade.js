@@ -30,7 +30,11 @@
     },
 
     url: function () {
-      return this.defaultUrl.replace(/:id/, this.id);
+      if (this.id) {
+        return this.defaultUrl.replace(/:id/, this.id);
+      }
+
+      return '/trades.json'
     }
   });
 

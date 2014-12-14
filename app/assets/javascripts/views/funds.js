@@ -14,7 +14,7 @@
     },
 
     bind: function () {
-      this.trades.on('sync', this.onSync, this);
+      this.trades.on('reset', this.onSync, this);
     },
 
     onSync: function () {
@@ -39,6 +39,7 @@
      return this.trades.where({
        fund_id: id
      });
+
     }
 
   });

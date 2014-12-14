@@ -4,7 +4,7 @@
   var defaults = {
     fundsUrl: '',
     tradesUrl: '',
-    tradeUrl: '',
+    tradeUniqueUrl: '',
     fundsEl: '',
     fundTemplate: '',
     tradesTemplate: '',
@@ -24,7 +24,7 @@
 
     // instance collections and views
     this.tradesCollection = new app.collections.Trades({
-      tradeUrl: this.options.tradeUrl,
+      tradeUniqueUrl: this.options.tradeUniqueUrl,
       url: this.options.tradesUrl,
       model: app.models.Trade
     });
@@ -58,7 +58,9 @@
 
   TradesManager.prototype.onSync = function () {
     // fetch trades after funds are ready
-    this.tradesCollection.fetch();
+    this.tradesCollection.fetch({
+      reset: true
+    });
   };
 
   root.TradesManager = TradesManager;

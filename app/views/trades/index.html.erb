@@ -37,7 +37,8 @@
   </div>
 
   <div class="magnetis-fund-bottom row">
-    <button class="magnetis-button confirm">Salvar Movimentações</button>
+    <button class="magnetis-button confirm"
+      id="save">Salvar Movimentações</button>
     <button class="magnetis-button">Cancelar</button>
   </div>
 </script>
@@ -120,7 +121,7 @@
       new Magnetis.TradesManager({
         fundsUrl: '/funds.json',
         tradesUrl: '/trades.json',
-        tradeUrl: '/trade/:id/.json',
+        tradeUniqueUrl: '/trades/:id.json',
         fundsEl: '#funds',
         fundTemplate: '#fund-template',
         tradesTemplate: '#trades-template',

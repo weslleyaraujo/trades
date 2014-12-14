@@ -14,6 +14,7 @@
     initialize: function (options) {
       this.trades = options.trades;
       this.prices = options.prices;
+      this.fundId = options.fundId;
       this.render();
     },
 
@@ -30,7 +31,12 @@
     },
 
     addTrade: function (model) {
-      model = model || new Magnetis.Backbone.models.Trade();
+      model = model || new Magnetis.Backbone.models.Trade({
+        fund_id: this.fundId
+      });
+
+      this.trades[0].collection.add(model);
+
       var trade = new Magnetis.Backbone.views.Trade({
         model: model,
         prices: this.prices
