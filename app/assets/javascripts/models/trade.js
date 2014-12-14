@@ -27,6 +27,10 @@
 
     prepare: function () {
       this.set('formated_date', Magnetis.helpers.toBrDate(this.get('date')));
+    },
+
+    url: function () {
+      return this.defaultUrl.replace(/:id/, this.id);
     }
   });
 

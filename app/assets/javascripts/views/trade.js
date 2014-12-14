@@ -101,11 +101,13 @@
     },
 
     getActualShares: function () {
-      return Magnetis.helpers.toExact(this.$el.find('[name="shares"]').autoNumeric('get'), 8);
+      return this.model.set('shares', Magnetis.helpers.toExact(this.$el.find('[name="shares"]').autoNumeric('get'), 8))
+          .get('shares');
     },
 
     getActualDay: function () {
-      return Magnetis.helpers.toUsDate(this.$el.find('[name="date"]').val() || this.model.get('date'));
+      return this.model.set('date', Magnetis.helpers.toUsDate(this.$el.find('[name="date"]').val() || this.model.get('date')))
+          .get('date');
     },
 
     setPrice: function (price) {
@@ -113,7 +115,7 @@
     },
 
     setTotal: function (total) {
-      this.$el.find('[name="total"]').autoNumeric('set', total);
+      this.model.set('total', this.$el.find('[name="total"]').autoNumeric('set', total).val());
     },
 
     onChangeDate: function () {

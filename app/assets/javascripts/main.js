@@ -4,6 +4,7 @@
   var defaults = {
     fundsUrl: '',
     tradesUrl: '',
+    tradeUrl: '',
     fundsEl: '',
     fundTemplate: '',
     tradesTemplate: '',
@@ -23,6 +24,7 @@
 
     // instance collections and views
     this.tradesCollection = new app.collections.Trades({
+      tradeUrl: this.options.tradeUrl,
       url: this.options.tradesUrl,
       model: app.models.Trade
     });

@@ -107,7 +107,9 @@
         class="is-right">
     </td>
     <td class="text-center">
-      <a href="javascript:void(0)" class="icons-sprite-close"></a>
+      <a href="javascript:void(0)"
+        data-model-id="{{ id }}"
+         class="icons-sprite-close"></a>
     </td>
 
 </script>
@@ -118,6 +120,7 @@
       new Magnetis.TradesManager({
         fundsUrl: '/funds.json',
         tradesUrl: '/trades.json',
+        tradeUrl: '/trade/:id/.json',
         fundsEl: '#funds',
         fundTemplate: '#fund-template',
         tradesTemplate: '#trades-template',
