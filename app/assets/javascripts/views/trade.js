@@ -16,16 +16,18 @@
     tagName: 'tr',
 
     events: {
-      'change [name="kind"]': 'onKindChange'
+      'change [name="kind"]': 'onKindChange',
+      'keyup [name="shares"]': 'calculate',
+      'change [name="date"]': 'onChangeDate',
     },
 
     initialize: function (options) {
       this.prices = options.prices;
       this.render();
-      this.calculate();
       this.changeIcon(this.getIcon(this.$el.find('[name="kind"]').val()));
 
       this.bindUI();
+      this.calculate();
     },
 
     render: function () {
@@ -67,25 +69,39 @@
         aSep: '.',
         aDec: ','
       });
+
+      this.$el.find('[name="total"]').autoNumeric({
+        mDec: 2,
+        vMin: '0',
+        aSep: '.',
+        aDec: ','
+      });
+
     },
 
     calculate: function () {
       var price = this.getPriceByDay(this.getActualDay()),
-          shares = this.getActualShares();
+          shares = this.getActualShares(),
+          total = Math.floor((price * shares) * 100) / 100;
 
-      conso
+      this.setPrice(price);
+      this.setTotal(total);
     },
 
     getPriceByDay: function (date) {
+      var price;
       try {
-        return this.prices.findWhere({
+        price = parseFloat(this.prices.findWhere({
           date: date
-        }).get('price');
+        }).get('price'), 10);
+
+        return Magnetis.helpers.toExact(price, 8);
+
       } catch (e) {}
     },
 
     getActualShares: function () {
-      return this.$el.find('[name="shares"]').val() || this.model.get('shares');
+      return Magnetis.helpers.toExact(this.$el.find('[name="shares"]').autoNumeric('get'), 8);
     },
 
     getActualDay: function () {
@@ -94,6 +110,16 @@
 
     setPrice: function (price) {
       this.$el.find('[name="price"]').val(price);
+    },
+
+    setTotal: function (total) {
+      this.$el.find('[name="total"]').autoNumeric('set', total);
+    },
+
+    onChangeDate: function () {
+      var price = this.getPriceByDay(this.getActualDay());
+      this.setPrice(price);
+      this.calculate();
     }
 
   });

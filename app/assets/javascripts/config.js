@@ -50,3 +50,14 @@ Magnetis.helpers.toBrDate = function (date) {
 Magnetis.helpers.toUsDate = function (date) {
   return date.split('/').reverse().join('-');
 };
+
+/*
+ * Convert to exact base number
+ *
+ * @method toExact
+ * @return {Number}
+ * */
+Magnetis.helpers.toExact = function (number, base) {
+  var exact = Number(number);
+  return parseFloat(exact.toFixed(base));
+};
