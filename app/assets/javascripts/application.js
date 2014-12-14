@@ -1,5 +1,6 @@
 //= require jquery/dist/jquery
 //= require jquery-ui/jquery-ui
+//= require autoNumeric/autoNumeric
 //= require underscore/underscore
 //= require backbone/backbone
 //= require backbone/backbone

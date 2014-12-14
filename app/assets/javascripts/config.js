@@ -40,3 +40,13 @@ Magnetis.helpers.template = function (selector) {
 Magnetis.helpers.toBrDate = function (date) {
   return date.split('-').reverse().join('/');
 };
+
+/*
+ * Helper for format date to 0000-00-00
+ *
+ * @method toUsDate
+ * @return {String} The formated date
+ * */
+Magnetis.helpers.toUsDate = function (date) {
+  return date.split('/').reverse().join('-');
+};
