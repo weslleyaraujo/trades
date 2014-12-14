@@ -51,7 +51,6 @@
 
     addToTrades: function (model) {
       this.trades.create(model);
-      console.log(model.id, this.trades.length);
     }
 
   });

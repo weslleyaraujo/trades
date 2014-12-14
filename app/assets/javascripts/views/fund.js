@@ -53,8 +53,8 @@
     },
 
     addToSave: function (model) {
-      this.requests.push('multiple');
       if (model.isValid()) {
+        this.requests.push('multiple');
         this.saveQueue.push(model);
       }
     },

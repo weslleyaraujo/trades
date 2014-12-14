@@ -66,7 +66,7 @@
       // TODO: move those info to a config
       this.$el.find('[name="shares"]').autoNumeric({
         mDec: 8,
-        vMax: '99999999999999999999.99',
+        vMax: "999999999999.0",
         vMin: '0',
         aSep: '.',
         aDec: ','
@@ -74,6 +74,7 @@
 
       this.$el.find('[name="total"]').autoNumeric({
         mDec: 2,
+        vMax: "99999999999999999999.99",
         vMin: '0',
         aSep: '.',
         aDec: ','
@@ -117,7 +118,7 @@
     },
 
     setTotal: function (total) {
-      this.$el.find('[name="total"]').autoNumeric('set', total).val();
+      this.$el.find('[name="total"]').autoNumeric('set', total);
     },
 
     onChangeDate: function (event) {
