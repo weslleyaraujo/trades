@@ -19,6 +19,7 @@
     "underscore": "~1.7.0",
     "backbone": "~1.1.2",
     "jquery-ui": "~1.11.2",
-    "autoNumeric": "~1.9.26"
+    "autoNumeric": "~1.9.26",
+    "jquery-maskedinput": "~1.4.0"
   }
 }

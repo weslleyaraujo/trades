@@ -60,7 +60,7 @@
       this.$el.find('[name="date"]').datepicker({
         minDate: this.prices.firstDate(),
         maxDate: this.prices.lastDate()
-      });
+      }).mask('99/99/9999');
 
       // bind numeric inputs
       // TODO: move those info to a config

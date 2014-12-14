@@ -1,6 +1,7 @@
 //= require jquery/dist/jquery
 //= require jquery-ui/jquery-ui
 //= require autoNumeric/autoNumeric
+//= require jquery-maskedinput/dist/jquery.maskedinput
 //= require underscore/underscore
 //= require backbone/backbone
 //= require backbone/backbone
