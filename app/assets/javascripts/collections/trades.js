@@ -17,6 +17,12 @@
 
     prepare: function () {
       this.model.prototype.defaultUrl = this.tradeUniqueUrl;
+    },
+
+    byFundId: function (id) {
+     return this.where({
+       fund_id: id
+     });
     }
   });
 

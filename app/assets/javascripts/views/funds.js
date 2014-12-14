@@ -10,6 +10,7 @@
     initialize: function (options) {
       this.el = options.el;
       this.trades = options.trades;
+
       this.bind();
     },
 
@@ -29,7 +30,7 @@
     addOne: function (model) {
       var item = new Magnetis.Backbone.views.Fund({
         model: model,
-        trades: this.getTrades(model.id)
+        trades: this.trades
       });
 
       this.$el.append(item.el);
@@ -39,7 +40,6 @@
      return this.trades.where({
        fund_id: id
      });
-
     }
 
   });

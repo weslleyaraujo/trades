@@ -35,11 +35,7 @@
     },
 
     url: function () {
-      if (this.id) {
-        return this.defaultUrl.replace(/:id/, this.id);
-      }
-
-      return '/trades.json'
+      return this.defaultUrl.replace(/:id/, this.id);
     },
 
     validate: function (attributes) {
@@ -52,6 +48,14 @@
         return 'Enter number of shares';
       }
 
+    },
+
+    isNew: function () {
+      try {
+        return !!this.id.match(/new-trade/);
+      } catch (e) {
+        return false;
+      }
     }
   });
 

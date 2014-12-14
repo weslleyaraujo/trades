@@ -27,26 +27,31 @@
     },
 
     renderTrades: function () {
-      _(this.trades).each(this.addTrade, this);
+      _(this.trades.byFundId(this.fundId)).each(this.addTrade, this);
     },
 
     addTrade: function (model) {
       model = model || new Magnetis.Backbone.models.Trade({
+        id: 'new-trade-' + _.uniqueId(),
         fund_id: this.fundId
       });
-
-      this.trades[0].collection.add(model);
 
       var trade = new Magnetis.Backbone.views.Trade({
         model: model,
         prices: this.prices
       });
 
+      this.addToTrades(model);
       this.$el.find('tbody').append(trade.el);
     },
 
     onAddClick: function () {
       this.addTrade();
+    },
+
+    addToTrades: function (model) {
+      this.trades.create(model);
+      console.log(model.id, this.trades.length);
     }
 
   });
